@@ -28,20 +28,22 @@ class PackageSeeker(object):
                 file_name = file.split('.')
                 if len(file_name) > 1 and file_name[len(file_name) - 1] == 'ipynb':
                     path_list.append(file_path)
+                if len(file_name) > 1 and file_name[len(file_name) - 1] == 'py':
+                    path_list.append(file_path)
         # parse targets and get package list
         package_list = self.parse_targets(path_list)
-        package_list = self.sort_and_remove_dupicate(package_list)
+        package_list = self.sort_and_remove_duplicate(package_list)
         if write and package_list:
             self.write_to_requirements(directory, package_list)
 
     def get_all_package_list(self, directory):
         p = self.collect_requirements(directory)
-        p = self.sort_and_remove_dupicate(p)
+        p = self.sort_and_remove_duplicate(p)
         self.write_to_requirements(directory, p)
 
     def parse_targets(self, path_list):
         # parse target file and get the path_list
-        regular = r"\"from\s+(\w*)(?:\.\w+)?\s+(?:import\s+[\*\w*])(?:\sas\s\w+)?\s*|\"import\s+(\w+)(?:\s+as\s\w+)?\s*"
+        regular = r"from\s+(\w*)(?:\.\w+)?\s+(?:import\s+[\*\w*])(?:\sas\s\w+)?\s*|\"import\s+(\w+)(?:\s+as\s\w+)?\s*"
         reg = re.compile(regular)
         package_list = []
         for file_path in path_list:
@@ -53,6 +55,7 @@ class PackageSeeker(object):
                     package_list.append(p[0])
                 elif p[1] != '':
                     package_list.append(p[1])
+        print(package_list)
         return package_list
 
     def write_to_requirements(self, directory, package_list):
@@ -89,7 +92,7 @@ class PackageSeeker(object):
             with open(os.path.join(directory, 'index.json'), 'w', encoding='UTF-8') as json_file:
                 json_file.write(json_str)
 
-    def sort_and_remove_dupicate(self, package_list):
+    def sort_and_remove_duplicate(self, package_list):
         # note that set() return a new set
         package_list = list(set(package_list))
         # note that sort() doesn't return anything
@@ -129,14 +132,14 @@ print(sys.argv)
 if len(sys.argv) > 1:
     path = sys.argv[1]
 else:
-    path = r'E:\MyProjects\notebooks'
+    path = r'E:\MyProjects\moop-launcher-service'
 
 Seeker = PackageSeeker()
 # Seeker.clear_files(path)
-# Seeker.get_package_list(path)
-# Seeker.write_to_json(path)
+Seeker.get_package_list(path)
+Seeker.write_to_json(path)
 Seeker.get_all_package_list(path)
 # print(Seeker.collect_requirements(path))
-print('pandas' in sys.modules.keys())
+# print('pandas' in sys.modules.keys())
 
 
