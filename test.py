@@ -1,5 +1,5 @@
-from ContentCollector import package_seeker
-from ContentCollector import package_writer
+from ContentCollector import seeker
+from ContentCollector import writer
 
 path_list = ['E:\\MyProjects\\PackageSeeker_test_files\\base\\python_base\\7、对象.ipynb',
              'E:\\MyProjects\\PackageSeeker_test_files\\base\\python_base\\data\\a.py',
@@ -10,6 +10,6 @@ path_list = ['E:\\MyProjects\\PackageSeeker_test_files\\base\\python_base\\7、�
 regex_list = []
 
 # i = package_seeker.get_packages(path_list)
-i = package_seeker.get_packages(r'E:\MyProjects\moop-launcher-service')
-# print(i)
-package_writer.write_to_requirement(i)
+i = seeker.get_packages(r'E:\MyProjects\PackageSeeker_test_files')
+writer.write_to_requirement(i)
+writer.write_notebook_name_to_json(r'E:\MyProjects\PackageSeeker_test_files')

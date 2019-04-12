@@ -5,16 +5,18 @@ Package seeker
 import os
 import re
 import json
-from typing import List, Dict
+from typing import List
 
-regex_for_python_packages = [r"from\s+(\w*)(?:\.\w+)?\s+(?:import\s+[\*\w*])(?:\sas\s\w+)?\s*|import\s+(\w+)(?:\s+as\s\w+)?\s*"]
-regex_for_ipynb_packages = [r"\"from\s+(\w*)(?:\.\w+)?\s+(?:import\s+[\*\w*])(?:\sas\s\w+)?\s*|\"import\s+(\w+)(?:\s+as\s\w+)?\s*"]
+regex_for_python_packages = \
+    [r"from\s+(\w*)(?:\.\w+)?\s+(?:import\s+[\*\w*])(?:\sas\s\w+)?\s*|import\s+(\w+)(?:\s+as\s\w+)?\s*"]
+regex_for_ipynb_packages = \
+    [r"\"from\s+(\w*)(?:\.\w+)?\s+(?:import\s+[\*\w*])(?:\sas\s\w+)?\s*|\"import\s+(\w+)(?:\s+as\s\w+)?\s*"]
 
 
-def get_path_list(directory: str, regex_list: List[str] = [r'\.py', r'\.ipynb']) -> List:
-    # 如果postfix为空，则全部检测（二进制编码和字符编码，gbk和utf-8编码？）
-    # get a new list, so that the txt will not be created in a dir without target file
-
+def get_path_list(directory: str, regex_list: List[str]) -> List:
+    # get a file path list, in which the path names match the regular expression
+    if not regex_list:
+        regex_list = [r'\.py', r'\.ipynb']
     path_list = []
     files = os.listdir(directory)
     # get the path list of target under directory
@@ -38,7 +40,7 @@ def get_path_list(directory: str, regex_list: List[str] = [r'\.py', r'\.ipynb'])
     return path_list
 
 
-def get_content_list_from_file(file_path: str, regex_list: List[str] = regex_for_python_packages) -> List:
+def get_content_list_from_file(file_path: str, regex_list: List[str]) -> List:
     # search in the given file, return what it found
     if not file_path:
         print("path is empty")
@@ -58,7 +60,7 @@ def get_content_list_from_file(file_path: str, regex_list: List[str] = regex_for
     return content_list
 
 
-def get_content_json(path_list: List[str], regex_list: List[str] = []) -> str:
+def get_content_json(path_list: List[str], regex_list: List[str]) -> str:
     # every file in path_list will be searched by every regex in regex_list, add file path and content list in one json
     if not path_list:
         print("path_list is empty")
@@ -99,8 +101,8 @@ def get_content_json(path_list: List[str], regex_list: List[str] = []) -> str:
 
 def get_packages(directory: str = "./") -> str:
     # get python packages under directory
-    path_list = get_path_list(directory)
-    return get_content_json(path_list)
+    path_list = get_path_list(directory, [])
+    return get_content_json(path_list, [])
 
 
 def sort_and_remove_duplicate(target_list: List) -> List:
@@ -109,7 +111,3 @@ def sort_and_remove_duplicate(target_list: List) -> List:
     # note that sort() doesn't return anything
     target_list.sort()
     return target_list
-
-
-
-
