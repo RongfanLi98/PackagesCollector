@@ -2,10 +2,16 @@
 import json
 import os
 from typing import List
+from ContentCollector import verifier
 
 
 def merge_dict(primary_dict: dict) -> dict:
-    # merge list under the same directory
+    """
+    merge list under the same directory
+    :param primary_dict: primary_dict has file paths as keys
+    :return: merged_dict has directory paths as keys, and the values are merged from the values under the same
+    dir in primary_dict
+    """
     merged_dict = {}
     for key in primary_dict.keys():
         directory = os.path.split(key)[0]
@@ -20,16 +26,21 @@ def merge_dict(primary_dict: dict) -> dict:
     return merged_dict
     
     
-def write_to_requirement(content_json: str):
+def write_to_requirement(content_json: str, with_version=False):
     # write to a requirement file follow the json
     content_dict = json.loads(content_json)
     requirements_dict = merge_dict(content_dict)
 
     for key in requirements_dict.keys():
+        # keys are file paths
         requirements_file = os.path.join(key, "requirements.txt")
         with open(requirements_file, "w", encoding='utf-8') as file:
             for i in requirements_dict[key]:
-                file.write(i + "\n")
+                if with_version:
+                    version = verifier.conda_search(i)
+                    file.write(i + "==" + version + "\n")
+                else:
+                    file.write(i + "\n")
 
 
 def write_notebook_name_to_json(directory: str):

@@ -45,6 +45,8 @@ def get_content_list_from_file(file_path: str, regex_list: List[str]) -> List:
     if not file_path:
         print("path is empty")
         return []
+    if not regex_list:
+        regex_list = regex_for_python_packages
 
     content_list = []
     file = open(file_path, 'r', encoding='utf-8')
@@ -97,6 +99,12 @@ def get_content_json(path_list: List[str], regex_list: List[str]) -> str:
         if py_json:
             content_dict.update(json.loads(py_json))
     return json.dumps(content_dict, indent=4, ensure_ascii=False)
+
+
+def remove_local_lib(package_list: List[str]) -> List[str]:
+    # check local library D:\Users\i9233\Anaconda3\Lib
+    print(os.__file__)
+    pass
 
 
 def get_packages(directory: str = "./") -> str:
