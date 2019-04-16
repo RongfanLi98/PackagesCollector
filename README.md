@@ -2,7 +2,7 @@
 ## 功能
 包检查器  
 本地版的爬虫，针对python包进行了优化  
-检查指定路径下的全部ipynb和py文件，自动生成requirements.txt
+检查指定路径下的全部ipynb和py文件，自动生成requirements.txt。由于是从本地文本中进行分析，所以package搜索和版本确认是分开的，并且版本确认目前只提供了conda中最新版本的查找，仅做参考用。  
 
 ## 模块内容
 1. seeker  
