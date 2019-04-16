@@ -2,7 +2,7 @@
 import json
 import os
 from typing import List
-from ContentCollector import verifier
+from PackagesCollector import verifier
 
 
 def merge_dict(primary_dict: dict) -> dict:

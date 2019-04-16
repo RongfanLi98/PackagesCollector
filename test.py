@@ -1,5 +1,5 @@
-from ContentCollector import seeker
-from ContentCollector import writer
+from PackagesCollector import seeker
+from PackagesCollector import writer
 
 directory = r'E:\MyProjects\PackageSeeker_test_files'
 

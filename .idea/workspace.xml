@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4974378-c5e8-4650-9835-9eadbaaf27fa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ContentCollector/seeker.py" beforeDir="false" afterPath="$PROJECT_DIR$/ContentCollector/seeker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentCollector/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/PackagesCollector/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentCollector/package_check.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentCollector/seeker.py" beforeDir="false" afterPath="$PROJECT_DIR$/PackagesCollector/seeker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentCollector/verifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/PackagesCollector/verifier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentCollector/writer.py" beforeDir="false" afterPath="$PROJECT_DIR$/PackagesCollector/writer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,25 +23,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ContentCollector/package_check.py">
+        <entry file="file://$PROJECT_DIR$/PackagesCollector/verifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="135" lean-forward="true" selection-start-line="135" selection-end-line="135" />
-              <folding>
-                <element signature="e#2782#3731#0" />
-                <element signature="e#3796#3984#0" />
-                <element signature="e#4062#4384#0" />
-                <element signature="e#4441#5152#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ContentCollector/verifier.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="48">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
               <folding>
                 <element signature="e#78#1012#0" />
                 <element signature="e#1056#1369#0" />
@@ -45,10 +36,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ContentCollector/seeker.py">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="48">
+                <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PackagesCollector/seeker.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="94" column="34" lean-forward="true" selection-start-line="94" selection-start-column="34" selection-end-line="94" selection-end-column="34" />
+            <state relative-caret-position="522">
+              <caret line="158" column="47" selection-start-line="158" selection-start-column="47" selection-end-line="158" selection-end-column="47" />
               <folding>
                 <element signature="e#0#23#1" />
                 <element signature="e#407#2741#0" />
@@ -62,6 +65,7 @@
                 <element signature="e#4021#4111#0" />
                 <element signature="e#4248#4459#0" />
                 <element signature="e#4331#4459#0" />
+                <element signature="e#4698#6160#0" />
                 <element signature="e#4844#4889#0" />
                 <element signature="e#5509#5771#0" />
                 <element signature="e#5595#5654#0" />
@@ -71,14 +75,13 @@
                 <element signature="e#6630#6935#0" />
                 <element signature="e#6981#7049#0" />
                 <element signature="e#7141#7277#0" />
-                <element signature="e#7342#7510#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ContentCollector/writer.py">
+        <entry file="file://$PROJECT_DIR$/PackagesCollector/writer.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="384">
               <caret line="69" column="56" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="56" />
@@ -87,6 +90,7 @@
                 <element signature="e#151#825#0" />
                 <element signature="e#905#1504#0" />
                 <element signature="e#1560#2438#0" />
+                <element signature="e#2511#2828#0" />
                 <element signature="e#2503#2671#0" />
               </folding>
             </state>
@@ -97,7 +101,7 @@
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="96">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -125,6 +129,7 @@
       <find>re.</find>
       <find>extend</find>
       <find>re</find>
+      <find>todo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -147,14 +152,14 @@
         <option value="$PROJECT_DIR$/ContentCollector/package_seeker.py" />
         <option value="$PROJECT_DIR$/ContentCollector/verifier.py" />
         <option value="$PROJECT_DIR$/std_packages.html" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/ContentCollector/writer.py" />
-        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/ContentCollector/seeker.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="45" />
     <option name="y" value="125" />
     <option name="width" value="1910" />
@@ -167,7 +172,20 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="PackageSeeker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PackageSeeker" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -333,18 +351,18 @@
       <workItem from="1554947646415" duration="19638000" />
       <workItem from="1555033717260" duration="7981000" />
       <workItem from="1555046547953" duration="11461000" />
-      <workItem from="1555379693914" duration="16216000" />
+      <workItem from="1555379693914" duration="18060000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74699000" />
+    <option name="totallyTimeSpent" value="76543000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49712643" weight="0.18033855" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49712643" visible="true" weight="0.18033855" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50287354" side_tool="true" weight="0.18733154" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -440,7 +458,7 @@
         <state relative-caret-position="-1680" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ContentCollector/__init__.py">
+    <entry file="file://$PROJECT_DIR$/PackagesCollector/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://D:/Users/i9233/Anaconda3/Lib/os.py">
@@ -626,40 +644,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="24">
-            <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ContentCollector/package_check.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="135" lean-forward="true" selection-start-line="135" selection-end-line="135" />
-          <folding>
-            <element signature="e#2782#3731#0" />
-            <element signature="e#3796#3984#0" />
-            <element signature="e#4062#4384#0" />
-            <element signature="e#4441#5152#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ContentCollector/writer.py">
+    <entry file="file://$PROJECT_DIR$/PackagesCollector/writer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
           <caret line="69" column="56" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="56" />
@@ -668,26 +653,39 @@
             <element signature="e#151#825#0" />
             <element signature="e#905#1504#0" />
             <element signature="e#1560#2438#0" />
+            <element signature="e#2511#2828#0" />
             <element signature="e#2503#2671#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ContentCollector/verifier.py">
+    <entry file="file://$PROJECT_DIR$/ContentCollector/package_check.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="456">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
           <folding>
-            <element signature="e#78#1012#0" />
-            <element signature="e#1056#1369#0" />
+            <element signature="e#252#1436#0" />
+            <element signature="e#1493#1628#0" />
+            <element signature="e#1678#2317#0" />
+            <element signature="e#2389#2683#0" />
+            <element signature="e#2782#3731#0" />
+            <element signature="e#3796#3984#0" />
+            <element signature="e#4062#4384#0" />
+            <element signature="e#4441#5152#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ContentCollector/seeker.py">
+    <entry file="file://$PROJECT_DIR$/.idea/dictionaries/i9233.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/PackageSeeker.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PackagesCollector/seeker.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="94" column="34" lean-forward="true" selection-start-line="94" selection-start-column="34" selection-end-line="94" selection-end-column="34" />
+        <state relative-caret-position="522">
+          <caret line="158" column="47" selection-start-line="158" selection-start-column="47" selection-end-line="158" selection-end-column="47" />
           <folding>
             <element signature="e#0#23#1" />
             <element signature="e#407#2741#0" />
@@ -701,6 +699,7 @@
             <element signature="e#4021#4111#0" />
             <element signature="e#4248#4459#0" />
             <element signature="e#4331#4459#0" />
+            <element signature="e#4698#6160#0" />
             <element signature="e#4844#4889#0" />
             <element signature="e#5509#5771#0" />
             <element signature="e#5595#5654#0" />
@@ -710,8 +709,41 @@
             <element signature="e#6630#6935#0" />
             <element signature="e#6981#7049#0" />
             <element signature="e#7141#7277#0" />
-            <element signature="e#7342#7510#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PackagesCollector/verifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#78#1012#0" />
+            <element signature="e#1056#1369#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="48">
+            <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
