@@ -30,22 +30,22 @@
     对于一个list，删除重复内容并排序，返回新的list。
 
 2. writer
-    1. merge_dict(primary_dict: dict)  
+    1. writer.merge_dict(primary_dict: dict)  
     指定一个字典，字典格式如seeker.get_content_json_from_files的返回json。返回一个新的字典，key是多个文件的共同的所在目录，value原字典对应的value的整合。
-    2. write_to_requirement(content_json: str, with_version=False)  
+    2. writer.write_to_requirement(content_json: str, with_version=False)  
     按照json内容写requirement，格式与anaconda要求的requirement相同。  
     若with_version=True，则查询每一个依赖在conda中的最新版本，若找不到，则version为'not found'。
-    3. write_notebook_name_to_json(directory: str)  
+    3. writer.write_notebook_name_to_json(directory: str)  
     将目录下所有ipynb的文件名按照预定格式写入json文件。
-    4. clear_files(directory, file_name='requirements.txt')  
+    4. writer.clear_files(directory, file_name='requirements.txt')  
     删除directory目录下所有指定file_name的文件。
-    5. sort_and_remove_duplicate(target_list: List)  
+    5. writer.sort_and_remove_duplicate(target_list: List)  
     对于一个list，删除重复内容并排序，返回新的list。
 
 3. verifier
-    1. conda_search(package: str)  
+    1. verifier.conda_search(package: str)  
     在conda中查询某个包是否存在，若存在则返回最新版本，若不存在则返回'not found'。
-    2. run_conda_command(command: str)  
+    2. verifier.run_conda_command(command: str)  
     执行conda命令，返回执行结果，需要自行解析。
 
 
