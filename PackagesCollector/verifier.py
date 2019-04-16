@@ -7,7 +7,7 @@ def conda_search(package: str) -> str:
     note that the name must be exactly right
 
     :param package: name of the package
-    :return: version, or "not found"
+    :return: version, or ""
     """
     from conda.exceptions import PackagesNotFoundError
     try:
@@ -21,10 +21,10 @@ def conda_search(package: str) -> str:
         else:
             # PackagesNotFoundError needs args, so we return manually
             print("search for  %-10s but only find  %-10s" % (package, package_info[0]))
-            return "not found"
+            return ""
     except PackagesNotFoundError:
         print("The following packages are not available from current channels:    ", package)
-        return "not found"
+        return ""
 
 
 def run_conda_command(command: str):

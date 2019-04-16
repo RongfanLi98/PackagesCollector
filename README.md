@@ -1,8 +1,12 @@
 # PackagesCollector
 ## 功能
 包检查器  
-本地版的爬虫，针对python包进行了优化  
-检查指定路径下的全部ipynb和py文件，自动生成requirements.txt。由于是从本地文本中进行分析，所以package搜索和版本确认是分开的，并且版本确认目前只提供了conda中最新版本的查找，仅做参考用。  
+
+可以对指定目录下的全部文件进行分析，找出依赖的python库，将requirement写到根目录下或者是每一层有py文件的目录下。可以选择进行版本确认，将对找到的全部packages一一在conda中搜索，确认最新版本。  
+
+由于是对本地文本进行解析，所以不会有完整的依赖，这并不影响环境搭建。得到的requirement有其他瑕疵，但是不妨作为一个参考，进行删减修改后便可以使用`conda install --file requirements.txt`，让conda来获取完整依赖。
+
+同时，package搜索和版本确认是分开的，并且版本确认目前只提供了conda中最新版本的查找，仅做参考用。  
 
 ## 模块内容
 1. seeker  
@@ -54,9 +58,9 @@
 1. seeker
     * 对命名进行优化
     * 提升python package的查找精确度
-2. writer
-    * 将目录下的全部requirement集中到一个文件中
+2. writer  
 3. verifier
     * 到conda和pip上查询包是否存在，并且确认目前最新版本到requirements。如果有所冲突，保留原文件，判断后填入requirements_conda和requirements_pip，若都不存在则写一个失败文档
     * 查询本地包的版本和最新包的差距
     * 比较本地两个requirement的不同，见[pip-pop](https://github.com/heroku-python/pip-pop)的功能
+    * 对项目内部的包的排查

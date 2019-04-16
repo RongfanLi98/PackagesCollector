@@ -2,7 +2,7 @@
 import json
 import os
 from typing import List
-from PackagesCollector import verifier
+from PackagesCollector import verifier, seeker
 
 
 def merge_dict(primary_dict: dict) -> dict:
@@ -38,9 +38,34 @@ def write_to_requirement(content_json: str, with_version=False):
             for i in requirements_dict[key]:
                 if with_version:
                     version = verifier.conda_search(i)
+                    if version:
+                        file.write(i + "==" + version + "\n")
+                    else:
+                        file.write(i + "\n")
+                else:
+                    file.write(i + "\n")
+
+
+def write_to_one_requirement(directory, with_version=False):
+    path_list = seeker.get_path_list(directory, [])
+    content_json = seeker.get_content_json_from_files(path_list, [])
+    content_dict = json.loads(content_json)
+    requirements_list = []
+
+    for key in content_dict:
+        requirements_list.extend(content_dict[key])
+    requirements_list = sort_and_remove_duplicate(requirements_list)
+    requirements_file = os.path.join(directory, "requirements.txt")
+    with open(requirements_file, "w", encoding='utf-8') as file:
+        for i in requirements_list:
+            if with_version:
+                version = verifier.conda_search(i)
+                if version:
                     file.write(i + "==" + version + "\n")
                 else:
                     file.write(i + "\n")
+            else:
+                file.write(i + "\n")
 
 
 def write_notebook_name_to_json(directory: str):
