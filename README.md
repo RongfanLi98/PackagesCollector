@@ -37,7 +37,9 @@
     若with_version=True，则查询每一个依赖在conda中的最新版本，若找不到，则version为'not found'。
     3. write_notebook_name_to_json(directory: str)  
     将目录下所有ipynb的文件名按照预定格式写入json文件。
-    4. sort_and_remove_duplicate(target_list: List)  
+    4. clear_files(directory, file_name='requirements.txt')  
+    删除directory目录下所有指定file_name的文件。
+    5. sort_and_remove_duplicate(target_list: List)  
     对于一个list，删除重复内容并排序，返回新的list。
 
 3. verifier
@@ -50,8 +52,8 @@
 ## 将来的改进方向
 
 1. seeker
+    * 对命名进行优化
 2. writer
-    * 提供删除文件的方法
 3. verifier
     * 到conda和pip上查询包是否存在，并且确认目前最新版本到requirements。如果有所冲突，保留原文件，判断后填入requirements_conda和requirements_pip，若都不存在则写一个失败文档
     * 查询本地包的版本和最新包的差距

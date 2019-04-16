@@ -67,6 +67,17 @@ def write_notebook_name_to_json(directory: str):
             json_file.write(json_str)
 
 
+def clear_files(directory, file_name='requirements.txt'):
+    files = os.listdir(directory)
+    # get the path list of target under directory
+    for file in files:
+        file_path = os.path.join(directory, file)
+        if os.path.isdir(file_path):
+            clear_files(file_path)
+        elif file == file_name:
+            os.remove(file_path)
+
+
 def sort_and_remove_duplicate(target_list: List) -> List:
     # note that set() return a new set
     target_list = list(set(target_list))
