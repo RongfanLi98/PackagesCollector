@@ -4,7 +4,7 @@
 本地版的爬虫，针对python包进行了优化  
 检查指定路径下的全部ipynb和py文件，自动生成requirements.txt
 
-模块内容
+## 模块内容
 1. seeker  
     1. seeker.get_path_list(directory: str, regex_list: List[str])  
     regex_list是储存正则表达式的列表，搜索directory下面的全部文件，找到文件名满足正则表达式的的文件，返回这些文件的路径组成的list。
