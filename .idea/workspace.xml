@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4974378-c5e8-4650-9835-9eadbaaf27fa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ContentCollector/seeker.py" beforeDir="false" afterPath="$PROJECT_DIR$/ContentCollector/seeker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,23 +29,55 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="504">
-                <caret line="21" column="89" selection-start-line="21" selection-start-column="89" selection-end-line="21" selection-end-column="89" />
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="120">
+                <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ContentCollector/verifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="72">
+              <caret line="3" column="30" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="30" />
               <folding>
-                <element signature="e#78#1012#0" />
                 <element signature="e#1056#1369#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ContentCollector/seeker.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="263">
+              <caret line="89" selection-start-line="89" selection-end-line="89" />
+              <folding>
+                <element signature="e#0#23#1" />
+                <element signature="e#407#2741#0" />
+                <element signature="e#2814#3784#0" />
+                <element signature="e#3091#3763#0" />
+                <element signature="e#3319#3763#0" />
+                <element signature="e#3448#3701#0" />
+                <element signature="e#3522#3628#0" />
+                <element signature="e#3870#4606#0" />
+                <element signature="e#3949#3989#0" />
+                <element signature="e#4021#4111#0" />
+                <element signature="e#4248#4459#0" />
+                <element signature="e#4331#4459#0" />
+                <element signature="e#4698#6160#0" />
+                <element signature="e#4844#4889#0" />
+                <element signature="e#5509#5771#0" />
+                <element signature="e#5595#5654#0" />
+                <element signature="e#5709#5771#0" />
+                <element signature="e#6253#7074#0" />
+                <element signature="e#6253#6547#1" />
+                <element signature="e#6630#6935#0" />
+                <element signature="e#6981#7049#0" />
+                <element signature="e#7342#7510#0" />
               </folding>
             </state>
           </provider>
@@ -54,11 +86,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ContentCollector/writer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="26" column="4" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+            <state relative-caret-position="450">
+              <caret line="45" column="47" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="47" />
               <folding>
                 <element signature="e#17#28#0" expanded="true" />
-                <element signature="e#151#825#0" />
                 <element signature="e#905#1504#0" />
                 <element signature="e#1560#2438#0" />
                 <element signature="e#2503#2671#0" />
@@ -67,28 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ContentCollector/seeker.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="81" column="26" lean-forward="true" selection-start-line="81" selection-start-column="26" selection-end-line="81" selection-end-column="26" />
-              <folding>
-                <element signature="e#41#50#0" expanded="true" />
-                <element signature="e#391#2630#0" />
-                <element signature="e#443#1413#0" />
-                <element signature="e#2200#3640#0" />
-                <element signature="e#6099#6621#0" />
-                <element signature="e#4034#4202#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+            <state relative-caret-position="72">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -109,13 +123,13 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>altsep</find>
-      <find>re</find>
       <find>return</find>
       <find>dumps</find>
       <find>packages</find>
       <find>splite</find>
       <find>re.</find>
       <find>extend</find>
+      <find>re</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -133,7 +147,6 @@
         <option value="$PROJECT_DIR$/PackageCollector/package_writer.py" />
         <option value="$PROJECT_DIR$/PackageCollector/package_seeker.py" />
         <option value="$PROJECT_DIR$/PackageCollector/package_checker.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/ContentCollector/package_check.py" />
         <option value="$PROJECT_DIR$/ContentCollector/package_writer.py" />
         <option value="$PROJECT_DIR$/ContentCollector/package_seeker.py" />
@@ -141,6 +154,7 @@
         <option value="$PROJECT_DIR$/ContentCollector/writer.py" />
         <option value="$PROJECT_DIR$/std_packages.html" />
         <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/ContentCollector/seeker.py" />
       </list>
     </option>
@@ -324,12 +338,12 @@
       <workItem from="1554947646415" duration="19638000" />
       <workItem from="1555033717260" duration="7981000" />
       <workItem from="1555046547953" duration="11461000" />
-      <workItem from="1555379693914" duration="12514000" />
+      <workItem from="1555379693914" duration="15641000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70997000" />
+    <option name="totallyTimeSpent" value="74124000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
@@ -340,7 +354,7 @@
       <window_info id="Favorites" order="2" sideWeight="0.50287354" side_tool="true" weight="0.18733154" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32963988" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35180056" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.26177284" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.47506925" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -409,7 +423,7 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/PackageSeeker$test.coverage" NAME="test Coverage Results" MODIFIED="1555394381441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PackageSeeker$test.coverage" NAME="test Coverage Results" MODIFIED="1555394801215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PackageSeeker$package_check.coverage" NAME="package_check Coverage Results" MODIFIED="1554973275548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentCollector" />
     <SUITE FILE_PATH="coverage/PackageSeeker$package_seeker.coverage" NAME="package_seeker Coverage Results" MODIFIED="1554948480163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentCollector" />
     <SUITE FILE_PATH="coverage/PackageSeeker$a.coverage" NAME="a Coverage Results" MODIFIED="1554874573178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -553,16 +567,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="504">
-            <caret line="21" column="89" selection-start-line="21" selection-start-column="89" selection-end-line="21" selection-end-column="89" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2and3/math.pyi">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-69">
@@ -634,24 +638,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ContentCollector/verifier.py">
+    <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="72">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
           <folding>
-            <element signature="e#78#1012#0" />
-            <element signature="e#1056#1369#0" />
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="120">
+            <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ContentCollector/seeker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
+          <folding>
+            <element signature="e#0#23#1" />
+            <element signature="e#407#2741#0" />
+            <element signature="e#2814#3784#0" />
+            <element signature="e#3091#3763#0" />
+            <element signature="e#3319#3763#0" />
+            <element signature="e#3448#3701#0" />
+            <element signature="e#3522#3628#0" />
+            <element signature="e#3870#4606#0" />
+            <element signature="e#3949#3989#0" />
+            <element signature="e#4021#4111#0" />
+            <element signature="e#4248#4459#0" />
+            <element signature="e#4331#4459#0" />
+            <element signature="e#4698#6160#0" />
+            <element signature="e#4844#4889#0" />
+            <element signature="e#5509#5771#0" />
+            <element signature="e#5595#5654#0" />
+            <element signature="e#5709#5771#0" />
+            <element signature="e#6253#7074#0" />
+            <element signature="e#6253#6547#1" />
+            <element signature="e#6630#6935#0" />
+            <element signature="e#6981#7049#0" />
+            <element signature="e#7342#7510#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ContentCollector/writer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="26" column="4" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+        <state relative-caret-position="450">
+          <caret line="45" column="47" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="47" />
           <folding>
             <element signature="e#17#28#0" expanded="true" />
-            <element signature="e#151#825#0" />
             <element signature="e#905#1504#0" />
             <element signature="e#1560#2438#0" />
             <element signature="e#2503#2671#0" />
@@ -659,27 +702,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
+    <entry file="file://$PROJECT_DIR$/ContentCollector/verifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+        <state relative-caret-position="72">
+          <caret line="3" column="30" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="30" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ContentCollector/seeker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="81" column="26" lean-forward="true" selection-start-line="81" selection-start-column="26" selection-end-line="81" selection-end-column="26" />
-          <folding>
-            <element signature="e#41#50#0" expanded="true" />
-            <element signature="e#391#2630#0" />
-            <element signature="e#443#1413#0" />
-            <element signature="e#2200#3640#0" />
-            <element signature="e#6099#6621#0" />
-            <element signature="e#4034#4202#0" />
+            <element signature="e#1056#1369#0" />
           </folding>
         </state>
       </provider>

@@ -103,7 +103,6 @@ def get_content_json_from_files(path_list: List[str], regex_list: List[str]) -> 
     else:
         # if regex_list is empty, find python packages, there may be import os in notebook's text field, so we do twice
         print("regex_list is empty, finding python packages in .py and .ipynb files...")
-        #
         py_list = []
         ipynb_list = []
         content_dict = {}
