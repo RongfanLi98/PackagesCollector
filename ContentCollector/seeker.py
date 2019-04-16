@@ -87,7 +87,7 @@ def get_content_list_from_file(file_path: str, regex_list: List[str]) -> List:
     return content_list
 
 
-def get_content_json_from_files(path_list: List[str], regex_list: List[str]) -> str:
+def get_content_json_from_files(path_list, regex_list: List[str]) -> str:
     # every file in path_list will be searched by every regex in regex_list, add file path and content list in one json
     if not path_list:
         print("path_list is empty")

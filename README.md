@@ -11,8 +11,8 @@
     2. seeker.get_content_list_from_file(file_path: str, regex_list: List[str])  
     指定文件路径，搜索文件内容中满足正则表达式的内容，返回内容组成的list。  
     若regex_list为空，则按照py文件和ipynb文件的规则，搜索python packages。
-    3. seeker.get_content_json_from_files(path_list: List[str], regex_list: List[str])  
-    path_list可由seeker.get_path_list得到。遍历path_list，对每一个path指定的文件，执行get_content_list_from_file。  
+    3. seeker.get_content_json_from_files(path_list, regex_list: List[str])  
+    path_list可由seeker.get_path_list得到，是path组成的list，同时也支持一个路径字符串。遍历path_list，对每一个path指定的文件，执行get_content_list_from_file。  
     若regex_list为空，则按照py文件和ipynb文件的规则，搜索python packages。  
     返回json格式如下：
         ```json
