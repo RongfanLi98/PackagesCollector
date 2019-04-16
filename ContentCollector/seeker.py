@@ -6,11 +6,33 @@ import os
 import re
 import json
 from typing import List
+import requests
 
 regex_for_python_packages = \
     [r"from\s+(\w*)(?:\.\w+)?\s+(?:import\s+[\*\w*])(?:\sas\s\w+)?\s*|import\s+(\w+)(?:\s+as\s\w+)?\s*"]
 regex_for_ipynb_packages = \
     [r"\"from\s+(\w*)(?:\.\w+)?\s+(?:import\s+[\*\w*])(?:\sas\s\w+)?\s*|\"import\s+(\w+)(?:\s+as\s\w+)?\s*"]
+python_37_std_lib = ['__future__', '__main__', '_dummy_thread', '_thread', 'abc', 'aifc', 'argparse', 'array', 'ast', 'asynchat',
+     'asyncio', 'asyncore', 'atexit', 'audioop', 'base64', 'bdb', 'binascii', 'binhex', 'bisect', 'builtins', 'bz2',
+     'cProfile', 'calendar', 'cgi', 'cgitb', 'chunk', 'cmath', 'cmd', 'code', 'codecs', 'codeop', 'collections',
+     'colorsys', 'compileall', 'concurrent', 'configparser', 'contextlib', 'contextvars', 'copy', 'copyreg',
+     'crypt', 'csv', 'ctypes', 'curses', 'dataclasses', 'datetime', 'dbm', 'decimal', 'difflib', 'dis', 'distutils',
+     'doctest', 'dummy_threading', 'email', 'encodings', 'ensurepip', 'enum', 'errno', 'faulthandler', 'fcntl',
+     'filecmp', 'fileinput', 'fnmatch', 'formatter', 'fractions', 'ftplib', 'functools', 'gc', 'getopt', 'getpass',
+     'gettext', 'glob', 'grp', 'gzip', 'hashlib', 'heapq', 'hmac', 'html', 'http', 'imaplib', 'imghdr', 'imp',
+     'importlib', 'inspect', 'io', 'ipaddress', 'itertools', 'json', 'keyword', 'lib2to3', 'linecache', 'locale',
+     'logging', 'lzma', 'macpath', 'mailbox', 'mailcap', 'marshal', 'math', 'mimetypes', 'mmap', 'modulefinder',
+     'msilib', 'msvcrt', 'multiprocessing', 'netrc', 'nis', 'nntplib', 'numbers', 'operator', 'optparse', 'os',
+     'ossaudiodev', 'parser', 'pathlib', 'pdb', 'pickle', 'pickletools', 'pipes', 'pkgutil', 'platform', 'plistlib',
+     'poplib', 'posix', 'pprint', 'profile', 'pstats', 'pty', 'pwd', 'py_compile', 'pyclbr', 'pydoc', 'queue',
+     'quopri', 'random', 're', 'readline', 'reprlib', 'resource', 'rlcompleter', 'runpy', 'sched', 'secrets',
+     'select', 'selectors', 'shelve', 'shlex', 'shutil', 'signal', 'site', 'smtpd', 'smtplib', 'sndhdr', 'socket',
+     'socketserver', 'spwd', 'sqlite3', 'ssl', 'stat', 'statistics', 'string', 'stringprep', 'struct', 'subprocess',
+     'sunau', 'symbol', 'symtable', 'sys', 'sysconfig', 'syslog', 'tabnanny', 'tarfile', 'telnetlib', 'tempfile',
+     'termios', 'test', 'textwrap', 'threading', 'time', 'timeit', 'tkinter', 'token', 'tokenize', 'trace',
+     'traceback', 'tracemalloc', 'tty', 'turtle', 'turtledemo', 'types', 'typing', 'unicodedata', 'unittest',
+     'urllib', 'uu', 'uuid', 'venv', 'warnings', 'wave', 'weakref', 'webbrowser', 'winreg', 'winsound', 'wsgiref',
+     'xdrlib', 'xml', 'xmlrpc', 'zipapp', 'zipfile', 'zipimport', 'zlib']
 
 
 def get_path_list(directory: str, regex_list: List[str]) -> List:
@@ -47,6 +69,7 @@ def get_content_list_from_file(file_path: str, regex_list: List[str]) -> List:
         return []
     if not regex_list:
         regex_list = regex_for_python_packages
+        regex_list.extend(regex_for_ipynb_packages)
 
     content_list = []
     file = open(file_path, 'r', encoding='utf-8')
@@ -58,11 +81,13 @@ def get_content_list_from_file(file_path: str, regex_list: List[str]) -> List:
                 content_list.append(package[0])
             else:
                 content_list.append(package[1])
+
     content_list = sort_and_remove_duplicate(content_list)
+    content_list = remove_standard_lib_from_list(content_list)
     return content_list
 
 
-def get_content_json(path_list: List[str], regex_list: List[str]) -> str:
+def get_content_json_from_files(path_list: List[str], regex_list: List[str]) -> str:
     # every file in path_list will be searched by every regex in regex_list, add file path and content list in one json
     if not path_list:
         print("path_list is empty")
@@ -91,8 +116,8 @@ def get_content_json(path_list: List[str], regex_list: List[str]) -> str:
                 ipynb_list.append(path)
                 path_list.remove(path)
 
-        ipynb_json = get_content_json(ipynb_list, regex_for_ipynb_packages)
-        py_json = get_content_json(py_list, regex_for_python_packages)
+        ipynb_json = get_content_json_from_files(ipynb_list, regex_for_ipynb_packages)
+        py_json = get_content_json_from_files(py_list, regex_for_python_packages)
 
         if ipynb_json:
             content_dict.update(json.loads(ipynb_json))
@@ -101,16 +126,35 @@ def get_content_json(path_list: List[str], regex_list: List[str]) -> str:
     return json.dumps(content_dict, indent=4, ensure_ascii=False)
 
 
-def remove_local_lib(package_list: List[str]) -> List[str]:
-    # check local library D:\Users\i9233\Anaconda3\Lib
-    print(os.__file__)
-    pass
+def remove_standard_lib_from_list(package_list: List[str], version=3.7) -> List[str]:
+    """
+    remove packages that already exist in standard library. The version must be one of 3, 3.5, 3.6, 3.7, 3.8.
+    If don't select the 3.7 version, search https://docs.python.org/3/py-modindex.html for details.
+    :param package_list:
+    :param version: python version
+    :return:
+    """
+    if version == 3.7:
+        std_lib_list = python_37_std_lib
+    else:
+        url = r"https://docs.python.org/" + str(version) + "/py-modindex.html"
+        context = requests.get(url).text
+        regex = r"<code class=\"xref\">(\w*)(?:\.\w*)*</code>"
+        regex = re.compile(regex)
+        std_lib_list = re.findall(regex, context)
+        std_lib_list = list(set(std_lib_list))
+
+    for package in package_list[:]:
+        if package in std_lib_list:
+            package_list.remove(package)
+
+    return package_list
 
 
-def get_packages(directory: str = "./") -> str:
+def get_python_packages_json(directory: str = "./") -> str:
     # get python packages under directory
     path_list = get_path_list(directory, [])
-    return get_content_json(path_list, [])
+    return get_content_json_from_files(path_list, [])
 
 
 def sort_and_remove_duplicate(target_list: List) -> List:
