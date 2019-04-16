@@ -1,7 +1,7 @@
 # PackageSeeker
 ## 功能
 包检查器  
-本地版的爬虫，针对python包进行了优化
+本地版的爬虫，针对python包进行了优化  
 检查指定路径下的全部ipynb和py文件，自动生成requirements.txt
 
 模块内容
