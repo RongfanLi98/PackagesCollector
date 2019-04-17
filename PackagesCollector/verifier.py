@@ -1,4 +1,7 @@
 from conda.cli import python_api
+from pip._internal import main as pip_main
+from pip._internal.commands import search
+import os
 
 
 def conda_search(package: str) -> str:
@@ -38,3 +41,24 @@ def run_conda_command(command: str):
     command.pop(0)
     r = python_api.run_command(command.pop(0), *command)
     return r
+
+
+def pip_search(packages, directory) -> str:
+    # pip automatically send message to stdout by logging module, so we need to redirect it
+    import sys
+    if isinstance(packages, str):
+        packages = [packages]
+    packages.insert(0, "search")
+
+    console = sys.stdout
+    cache = open(os.path.join(directory, "search_result.txt"), "w")
+    sys.stdout = cache
+    code = pip_main(packages)
+    sys.stdout = console
+
+    if code == 0:
+        print("please check search_result.txt under %s" % directory)
+    else:
+        print("something wrong when running pip_search")
+
+    return ""

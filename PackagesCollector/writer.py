@@ -54,6 +54,7 @@ def write_to_one_requirement(directory, with_version=False):
 
     for key in content_dict:
         requirements_list.extend(content_dict[key])
+
     requirements_list = sort_and_remove_duplicate(requirements_list)
     requirements_file = os.path.join(directory, "requirements.txt")
     with open(requirements_file, "w", encoding='utf-8') as file:
@@ -66,6 +67,21 @@ def write_to_one_requirement(directory, with_version=False):
                     file.write(i + "\n")
             else:
                 file.write(i + "\n")
+
+
+def divide_requirement(requirement_path):
+    # if there is many packages that can't be found in conda, divide it into two parts, and search in pip
+    pip_list = []
+    with open(requirement_path, "a+", encoding="utf-8") as requirement:
+        requirement.seek(0)
+        line = requirement.readline()
+        while line:
+            if "=" not in line:
+                pip_list.append(line.strip())
+            line = requirement.readline()
+
+    directory = os.path.split(requirement_path)[0]
+    verifier.pip_search(pip_list, directory)
 
 
 def write_notebook_name_to_json(directory: str):

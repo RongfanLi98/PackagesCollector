@@ -45,6 +45,8 @@
     删除directory目录下所有指定file_name的文件。
     5. writer.sort_and_remove_duplicate(target_list: List)  
     对于一个list，删除重复内容并排序，返回新的list。
+    6. writer.divide_requirement(requirement_path)  
+    将目标requirement中没有被确定version的包，在pip中搜索，将搜索结果写入同目录下的search_result.txt
 
 3. verifier
     1. verifier.conda_search(package: str)  
