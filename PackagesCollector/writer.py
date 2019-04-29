@@ -72,15 +72,18 @@ def write_to_one_requirement(directory, with_version=False):
 def divide_requirement(requirement_path):
     # if there is many packages that can't be found in conda, divide it into two parts, and search in pip
     pip_list = []
-    with open(requirement_path, "a+", encoding="utf-8") as requirement:
-        requirement.seek(0)
-        line = requirement.readline()
-        while line:
-            if "=" not in line:
-                pip_list.append(line.strip())
+    with open(requirement_path, "r", encoding="utf-8") as requirement:
+        directory = os.path.split(requirement_path)[0]
+        conda_file = os.path.join(directory, "conda_requirements.txt")
+        with open(conda_file, "w", encoding="utf-8") as conda_requirement:
             line = requirement.readline()
+            while line:
+                if "=" not in line:
+                    pip_list.append(line.strip())
+                else:
+                    conda_requirement.write(line)
+                line = requirement.readline()
 
-    directory = os.path.split(requirement_path)[0]
     verifier.pip_search(pip_list, directory)
 
 

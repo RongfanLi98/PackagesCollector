@@ -1,6 +1,5 @@
 from conda.cli import python_api
 from pip._internal import main as pip_main
-from pip._internal.commands import search
 import os
 
 
@@ -50,8 +49,9 @@ def pip_search(packages, directory) -> str:
         packages = [packages]
     packages.insert(0, "search")
 
+    print("Searching in pip, please wait...")
     console = sys.stdout
-    cache = open(os.path.join(directory, "search_result.txt"), "w")
+    cache = open(os.path.join(directory, "pip_search_result.txt"), "w")
     sys.stdout = cache
     code = pip_main(packages)
     sys.stdout = console

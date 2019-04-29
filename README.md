@@ -46,14 +46,15 @@
     5. writer.sort_and_remove_duplicate(target_list: List)  
     对于一个list，删除重复内容并排序，返回新的list。
     6. writer.divide_requirement(requirement_path)  
-    将目标requirement中没有被确定version的包，在pip中搜索，将搜索结果写入同目录下的search_result.txt
+    将目标requirement中没有被确定version的包，在pip中搜索，将搜索结果写入同目录下的pip_search_result.txt，确认了版本的，写入conda_requirements.txt。
 
 3. verifier
     1. verifier.conda_search(package: str)  
     在conda中查询某个包是否存在，若存在则返回最新版本，若不存在则返回'not found'。
     2. verifier.run_conda_command(command: str)  
     执行conda命令，返回执行结果，需要自行解析。
-
+    3. pip_search(packages, directory)  
+    在pip中搜索packages，并将结果写入directory下的search_result.txt
 
 ## 将来的改进方向
 
@@ -62,7 +63,7 @@
     * 提升python package的查找精确度
 2. writer  
 3. verifier
-    * 到conda和pip上查询包是否存在，并且确认目前最新版本到requirements。如果有所冲突，保留原文件，判断后填入requirements_conda和requirements_pip，若都不存在则写一个失败文档
+    * 确认pip的最新版本。如果有所冲突，保留原文件，判断后填入requirements_conda和requirements_pip，若都不存在则写一个失败文档
     * 查询本地包的版本和最新包的差距
     * 比较本地两个requirement的不同，见[pip-pop](https://github.com/heroku-python/pip-pop)的功能
     * 对项目内部的包的排查
